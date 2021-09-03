@@ -27,8 +27,8 @@ public class FirePoint : MonoBehaviour
     }
     void Fire()
     {
-        GameObject Go = Instantiate(Ammo, fireTrans.position, Quaternion.identity, this.transform);
-        Go.GetComponent<Rigidbody2D>().AddForce(this.transform.InverseTransformVector(Vector3.up) * 15, ForceMode2D.Impulse);
+        Transform ammospawn = AmmoManger.SpawnAmmo(fireTrans.position, Quaternion.identity);
+        ammospawn.GetComponent<Rigidbody2D>().AddForce(fireTrans.up * speed, ForceMode2D.Impulse);
 
     }
    
