@@ -6,6 +6,7 @@ public class Ai : MonoBehaviour
 {
     public Transform player;
     public float lifetime;
+    [SerializeField] float zAngle;
     void Start()
     {
        
@@ -22,6 +23,8 @@ public class Ai : MonoBehaviour
         }
         if (player == null)
             return;
-        Vector3 dir = player.position - transform.position; 
+        Vector3 dir = player.position - transform.position;
+        zAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
+        transform.rotation = Quaternion.Euler(0f, 0f, zAngle);
     }
 }
