@@ -24,8 +24,7 @@ public class AiAmmo : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             Destroy(other.gameObject);
-
-            Debug.Log("Touch player");
         }
+          
     }
 }
