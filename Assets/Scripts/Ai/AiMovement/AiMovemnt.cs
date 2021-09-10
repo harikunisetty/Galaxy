@@ -4,35 +4,94 @@ using UnityEngine;
 
 public class AiMovemnt : MonoBehaviour
 {
-    public float speed = 0.2f;
-    [SerializeField] float startMove= 2f;
-    [SerializeField] float timer = 0.5f;
+    [Header("AI")]
+    [SerializeField] bool alive;
 
-    // Start is called before the first frame update
+    [Header("Movement")]
+    [SerializeField] float speed = 0.2f;
+    [SerializeField] float startMove = 2f, timer = 0.5f;
+    private Vector3 pos;
+
+    [Header("Side Movement")]
+    [SerializeField] bool moveRight, moveSide;
+    [SerializeField] float xSpeed;
+    [SerializeField] float sideTimer = 0.5f, timerMultiliyer = 0.25f, restTimer = 0.5f;
+
+
     void Start()
     {
         timer = startMove;
+        alive = true;
+        moveSide = true;
+
+        pos = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (!alive)
+            return;
+
+        //Death
+        Drop();
+
+        if (transform.position.y < -6f)
+        {
+            Death();
+        }
+
+        // Move
+        SideMovement();
+
+        transform.position = pos;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            Death();
+        }    
+    }
+
+    void SideMovement()
+    {
+        if (!moveSide)
+            return;
+
+        sideTimer -= Time.deltaTime * timerMultiliyer;
+
+        if(sideTimer <= 0f)
+        {
+            sideTimer = restTimer;
+
+            moveRight = !moveRight;
+        }
+
+        if (moveRight)
+            pos += new Vector3(xSpeed * Time.deltaTime, 0f, 0f);
+        else
+            pos -= new Vector3(xSpeed * Time.deltaTime, 0f, 0f);
+    }
+
+    void Drop ()
+    {
         timer -= Time.deltaTime;
+
         if (timer <= 0)
         {
-           
+            moveSide = true;
 
-            Vector3 pos = transform.position;
+            pos = transform.position;
             Vector3 position = new Vector3(0, speed, 0);
 
             pos += transform.rotation * position;
-
-            transform.position = pos;
-        }
-        if (transform.position.y < -6f)
-        {
-            Destroy(gameObject);
         }
     }
-   
+
+    void Death ()
+    {
+        alive = true;
+        Destroy(gameObject);
+    }   
 }

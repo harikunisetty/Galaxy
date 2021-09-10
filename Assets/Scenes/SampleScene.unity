@@ -168,9 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 8899726}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &9737616
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,9 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 9737617}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &15441960
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,8 +309,6 @@ GameObject:
   - component: {fileID: 24605418}
   - component: {fileID: 24605423}
   - component: {fileID: 24605422}
-  - component: {fileID: 24605421}
-  - component: {fileID: 24605420}
   - component: {fileID: 24605419}
   m_Layer: 3
   m_Name: AI (4)
@@ -336,7 +330,7 @@ Transform:
   m_Children:
   - {fileID: 1561822451}
   m_Father: {fileID: 1963330550}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &24605419
 MonoBehaviour:
@@ -350,37 +344,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 10
   timer: 2
---- !u!114 &24605420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24605417}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &24605421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24605417}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &24605422
 Rigidbody2D:
   serializedVersion: 4
@@ -473,9 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 113434144}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &127259285
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,8 +458,6 @@ GameObject:
   - component: {fileID: 127259291}
   - component: {fileID: 127259290}
   - component: {fileID: 127259289}
-  - component: {fileID: 127259288}
-  - component: {fileID: 127259287}
   - component: {fileID: 127259286}
   m_Layer: 3
   m_Name: AI (10)
@@ -509,37 +478,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 25
   timer: 2
---- !u!114 &127259287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127259285}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &127259288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127259285}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 0
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &127259289
 Rigidbody2D:
   serializedVersion: 4
@@ -647,9 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 143206773}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &153694188
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,8 +690,6 @@ GameObject:
   - component: {fileID: 163065387}
   - component: {fileID: 163065386}
   - component: {fileID: 163065385}
-  - component: {fileID: 163065384}
-  - component: {fileID: 163065383}
   - component: {fileID: 163065382}
   m_Layer: 3
   m_Name: AI (6)
@@ -766,37 +710,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 25
   timer: 2
---- !u!114 &163065383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163065381}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &163065384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163065381}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &163065385
 Rigidbody2D:
   serializedVersion: 4
@@ -1032,10 +955,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238224914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.427, z: 0}
+  m_LocalPosition: {x: 0, y: 0.42700005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1126024552}
+  m_Father: {fileID: 1189970184}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &238224916
@@ -1045,16 +968,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238224914}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5783acd8016119e4bbac5bf434761cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 238224915}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &285409882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &285409883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,8 +1267,6 @@ GameObject:
   - component: {fileID: 412898884}
   - component: {fileID: 412898883}
   - component: {fileID: 412898882}
-  - component: {fileID: 412898881}
-  - component: {fileID: 412898880}
   - component: {fileID: 412898879}
   m_Layer: 3
   m_Name: AI (16)
@@ -1368,37 +1287,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 10
   timer: 2
---- !u!114 &412898880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412898878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &412898881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412898878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &412898882
 Rigidbody2D:
   serializedVersion: 4
@@ -1674,9 +1572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 557901019}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &572449866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,9 +1701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 707959949}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &739159615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,9 +1747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 739159616}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &756929233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,8 +1842,6 @@ GameObject:
   - component: {fileID: 778968503}
   - component: {fileID: 778968502}
   - component: {fileID: 778968501}
-  - component: {fileID: 778968500}
-  - component: {fileID: 778968499}
   - component: {fileID: 778968498}
   m_Layer: 3
   m_Name: AI (18)
@@ -1972,37 +1862,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 80
   timer: 2
---- !u!114 &778968499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778968497}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &778968500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778968497}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &778968501
 Rigidbody2D:
   serializedVersion: 4
@@ -2110,9 +1979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 847471851}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &900624968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,9 +2025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 900624969}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &901224575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,8 +2120,6 @@ GameObject:
   - component: {fileID: 906634574}
   - component: {fileID: 906634573}
   - component: {fileID: 906634572}
-  - component: {fileID: 906634571}
-  - component: {fileID: 906634570}
   - component: {fileID: 906634569}
   m_Layer: 3
   m_Name: AI (12)
@@ -2277,37 +2140,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 15
   timer: 2
---- !u!114 &906634570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906634568}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &906634571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906634568}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &906634572
 Rigidbody2D:
   serializedVersion: 4
@@ -2381,8 +2223,6 @@ GameObject:
   - component: {fileID: 943742426}
   - component: {fileID: 943742425}
   - component: {fileID: 943742424}
-  - component: {fileID: 943742423}
-  - component: {fileID: 943742422}
   - component: {fileID: 943742421}
   m_Layer: 3
   m_Name: AI (14)
@@ -2403,37 +2243,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 25
   timer: 2
---- !u!114 &943742422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943742420}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &943742423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943742420}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 0
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &943742424
 Rigidbody2D:
   serializedVersion: 4
@@ -2511,12 +2330,12 @@ GameObject:
   - component: {fileID: 966218239}
   - component: {fileID: 966218240}
   m_Layer: 3
-  m_Name: AI
+  m_Name: Bose
   m_TagString: Kill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &966218235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2591,8 +2410,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464223945}
-  m_Father: {fileID: 1963330550}
-  m_RootOrder: 15
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &966218239
 MonoBehaviour:
@@ -2619,9 +2438,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 100
   timer: 2
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 5
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!1 &1016952868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,8 +2459,6 @@ GameObject:
   - component: {fileID: 1016952874}
   - component: {fileID: 1016952873}
   - component: {fileID: 1016952872}
-  - component: {fileID: 1016952871}
-  - component: {fileID: 1016952870}
   - component: {fileID: 1016952869}
   m_Layer: 3
   m_Name: AI (8)
@@ -2655,37 +2479,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 70
   timer: 2
---- !u!114 &1016952870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016952868}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1016952871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016952868}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1016952872
 Rigidbody2D:
   serializedVersion: 4
@@ -2793,9 +2596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1073137394}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1094783040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,9 +2642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1094783041}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1098426293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,89 +2772,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1126024551
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1126024552}
-  - component: {fileID: 1126024553}
-  m_Layer: 0
-  m_Name: Ai
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1126024552
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126024551}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 238224915}
-  m_Father: {fileID: 1189970184}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1126024553
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126024551}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 294253b7c18e74e47b35a7cfcffdcde7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.5, y: 1.5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1139899411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,9 +2817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1139899412}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1142028130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3115,8 +2829,6 @@ GameObject:
   - component: {fileID: 1142028136}
   - component: {fileID: 1142028135}
   - component: {fileID: 1142028134}
-  - component: {fileID: 1142028133}
-  - component: {fileID: 1142028132}
   - component: {fileID: 1142028131}
   m_Layer: 3
   m_Name: AI (13)
@@ -3137,37 +2849,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 20
   timer: 2
---- !u!114 &1142028132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142028130}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1142028133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142028130}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1142028134
 Rigidbody2D:
   serializedVersion: 4
@@ -3275,9 +2966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1189474567}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1189970183
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,13 +2976,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1189970184}
+  - component: {fileID: 1189970186}
   - component: {fileID: 1189970189}
   - component: {fileID: 1189970188}
-  - component: {fileID: 1189970187}
-  - component: {fileID: 1189970186}
   - component: {fileID: 1189970185}
   m_Layer: 3
-  m_Name: AI (20)
+  m_Name: Basic AI (Ried Space Ship)
   m_TagString: Kill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3310,9 +2998,9 @@ Transform:
   m_LocalPosition: {x: -2.28, y: 2.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1126024552}
+  - {fileID: 238224915}
   m_Father: {fileID: 1963330550}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1189970185
 MonoBehaviour:
@@ -3326,37 +3014,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 17
   timer: 2
---- !u!114 &1189970186
-MonoBehaviour:
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
+--- !u!212 &1189970186
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189970183}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1189970187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189970183}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 294253b7c18e74e47b35a7cfcffdcde7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.5, y: 1.5}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!50 &1189970188
 Rigidbody2D:
   serializedVersion: 4
@@ -3394,10 +3112,10 @@ BoxCollider2D:
   m_Offset: {x: 0.000000029802322, y: 0.0692963}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -3664,8 +3382,6 @@ GameObject:
   - component: {fileID: 1290084787}
   - component: {fileID: 1290084786}
   - component: {fileID: 1290084785}
-  - component: {fileID: 1290084784}
-  - component: {fileID: 1290084783}
   - component: {fileID: 1290084782}
   m_Layer: 3
   m_Name: AI (5)
@@ -3686,37 +3402,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 10
   timer: 2
---- !u!114 &1290084783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290084781}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1290084784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290084781}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1290084785
 Rigidbody2D:
   serializedVersion: 4
@@ -3873,8 +3568,6 @@ GameObject:
   - component: {fileID: 1350623232}
   - component: {fileID: 1350623231}
   - component: {fileID: 1350623230}
-  - component: {fileID: 1350623229}
-  - component: {fileID: 1350623228}
   - component: {fileID: 1350623227}
   m_Layer: 3
   m_Name: AI (17)
@@ -3895,37 +3588,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 65
   timer: 2
---- !u!114 &1350623228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350623226}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1350623229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350623226}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1350623230
 Rigidbody2D:
   serializedVersion: 4
@@ -4033,9 +3705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1358818292}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1492557178
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,8 +3717,6 @@ GameObject:
   - component: {fileID: 1492557184}
   - component: {fileID: 1492557183}
   - component: {fileID: 1492557182}
-  - component: {fileID: 1492557181}
-  - component: {fileID: 1492557180}
   - component: {fileID: 1492557179}
   m_Layer: 3
   m_Name: AI (9)
@@ -4069,37 +3737,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 20
   timer: 2
---- !u!114 &1492557180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492557178}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1492557181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492557178}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1492557182
 Rigidbody2D:
   serializedVersion: 4
@@ -4207,9 +3854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1559713094}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1561822450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4421,9 +4066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1598379335}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1636118950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4469,9 +4112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1636118951}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1667332328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4549,8 +4190,6 @@ GameObject:
   - component: {fileID: 1701366402}
   - component: {fileID: 1701366407}
   - component: {fileID: 1701366406}
-  - component: {fileID: 1701366405}
-  - component: {fileID: 1701366404}
   - component: {fileID: 1701366403}
   m_Layer: 3
   m_Name: AI (19)
@@ -4572,7 +4211,7 @@ Transform:
   m_Children:
   - {fileID: 375198449}
   m_Father: {fileID: 1963330550}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1701366403
 MonoBehaviour:
@@ -4586,37 +4225,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 20
   timer: 2
---- !u!114 &1701366404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701366401}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1701366405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701366401}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1701366406
 Rigidbody2D:
   serializedVersion: 4
@@ -4752,9 +4370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1803608217}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1824530081
 GameObject:
   m_ObjectHideFlags: 0
@@ -4849,8 +4465,6 @@ GameObject:
   - component: {fileID: 1841199378}
   - component: {fileID: 1841199377}
   - component: {fileID: 1841199376}
-  - component: {fileID: 1841199375}
-  - component: {fileID: 1841199374}
   - component: {fileID: 1841199373}
   m_Layer: 3
   m_Name: AI (3)
@@ -4871,37 +4485,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 10
   timer: 2
---- !u!114 &1841199374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841199372}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1841199375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841199372}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1841199376
 Rigidbody2D:
   serializedVersion: 4
@@ -5058,8 +4651,6 @@ GameObject:
   - component: {fileID: 1905324865}
   - component: {fileID: 1905324864}
   - component: {fileID: 1905324863}
-  - component: {fileID: 1905324862}
-  - component: {fileID: 1905324861}
   - component: {fileID: 1905324860}
   m_Layer: 3
   m_Name: AI (11)
@@ -5080,37 +4671,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 17
   timer: 2
---- !u!114 &1905324861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1905324859}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1905324862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1905324859}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1905324863
 Rigidbody2D:
   serializedVersion: 4
@@ -5264,12 +4834,11 @@ Transform:
   - {fileID: 1016952874}
   - {fileID: 906634574}
   - {fileID: 778968503}
-  - {fileID: 966218238}
   - {fileID: 24605418}
   - {fileID: 1701366402}
   - {fileID: 1189970184}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1986801890
 GameObject:
@@ -5365,8 +4934,6 @@ GameObject:
   - component: {fileID: 1995601619}
   - component: {fileID: 1995601618}
   - component: {fileID: 1995601617}
-  - component: {fileID: 1995601616}
-  - component: {fileID: 1995601615}
   - component: {fileID: 1995601614}
   m_Layer: 3
   m_Name: AI (15)
@@ -5387,37 +4954,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 60
   timer: 2
---- !u!114 &1995601615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995601613}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &1995601616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995601613}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &1995601617
 Rigidbody2D:
   serializedVersion: 4
@@ -5525,9 +5071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 1999342699}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
 --- !u!1 &2008963173
 GameObject:
   m_ObjectHideFlags: 0
@@ -5618,8 +5162,6 @@ GameObject:
   - component: {fileID: 2114426612}
   - component: {fileID: 2114426611}
   - component: {fileID: 2114426610}
-  - component: {fileID: 2114426609}
-  - component: {fileID: 2114426608}
   - component: {fileID: 2114426607}
   m_Layer: 3
   m_Name: AI (7)
@@ -5640,37 +5182,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe380771ea9eb6e4280aabe52491f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 0
   speed: 0.03
   startMove: 40
   timer: 2
---- !u!114 &2114426608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114426606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af3b3fc59692f64caba800045468584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.01
---- !u!114 &2114426609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114426606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66734cdf4230c424984ae22bc4347f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223099502}
-  lifetime: 5
-  zAngle: 0
+  moveRight: 0
+  moveSide: 0
+  xSpeed: 0.125
+  sideTimer: 0.5
+  timerMultiliyer: 0.25
+  restTimer: 0.5
 --- !u!50 &2114426610
 Rigidbody2D:
   serializedVersion: 4
@@ -5778,6 +5299,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAttack: 2
   timer: 1
-  fireTrans: {fileID: 2116672842}
   Ammo: {fileID: 3816496128952154672, guid: 2279570a2e1acd347b81ff6de46897da, type: 3}
-  velocity: {x: 0, y: 0.5, z: 0}
