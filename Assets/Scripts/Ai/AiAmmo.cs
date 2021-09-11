@@ -8,7 +8,7 @@ public class AiAmmo : MonoBehaviour
     public float lifeTime = 5f;
     void Start()
     {
-        Destroy(gameObject, lifeTime);
+        /*Destroy(gameObject, lifeTime);*/
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class AiAmmo : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
           
     }

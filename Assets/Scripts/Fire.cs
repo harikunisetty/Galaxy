@@ -21,7 +21,8 @@ public class Fire : MonoBehaviour
         if (other.gameObject.layer == 3)
         {
             Destroy(other.gameObject);
-          
+            gameObject.SetActive(false);
+
             Debug.Log("Touch Enemy");
         }
        

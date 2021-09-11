@@ -66,12 +66,13 @@ public class AiMovemnt : MonoBehaviour
             sideTimer = restTimer;
 
             moveRight = !moveRight;
+            
         }
-
         if (moveRight)
             pos += new Vector3(xSpeed * Time.deltaTime, 0f, 0f);
         else
             pos -= new Vector3(xSpeed * Time.deltaTime, 0f, 0f);
+
     }
 
     void Drop ()

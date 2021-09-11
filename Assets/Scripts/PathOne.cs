@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path : MonoBehaviour
+public class PathOne : MonoBehaviour
 {
     [Header("Path")]
     [Range(1, 25)]
@@ -25,9 +25,9 @@ public class Path : MonoBehaviour
         // Add Objects to Path List
         pathList.Clear();
 
-        foreach(Transform ts in objectArray)
+        foreach (Transform ts in objectArray)
         {
-            if(ts != this.transform)
+            if (ts != this.transform)
             {
                 pathList.Add(ts);
             }
@@ -38,7 +38,7 @@ public class Path : MonoBehaviour
         {
             Vector3 currentPosition = pathList[i].position;
 
-            if(i > 0)
+            if (i > 0)
             {
                 Vector3 perviousPosition = pathList[i - 1].position;
 
@@ -49,7 +49,7 @@ public class Path : MonoBehaviour
         }
 
         // Curving the path
-        if(pathList.Count % 2 == 0)
+        if (pathList.Count % 2 == 0)
         {
             // Even
             pathList.Add(pathList[pathList.Count - 1]);
@@ -71,7 +71,7 @@ public class Path : MonoBehaviour
         {
             for (int j = 0; j <= pointsDensity; j++)
             {
-                Vector3 lineEnd = GetLastPoint(pathList[i].position, pathList[i+1].position, pathList[i+3].position, (float) j/pointsDensity);
+                Vector3 lineEnd = GetLastPoint(pathList[i].position, pathList[i + 1].position, pathList[i + 3].position, (float)j / pointsDensity);
 
                 Gizmos.color = Color.blue;
                 Gizmos.DrawLine(lineStart, lineEnd);
@@ -81,7 +81,7 @@ public class Path : MonoBehaviour
         }
     }
 
-    Vector3 GetLastPoint (Vector3 point01, Vector3 point02, Vector3 point03, float t)
+    Vector3 GetLastPoint(Vector3 point01, Vector3 point02, Vector3 point03, float t)
     {
         return Vector3.Lerp(Vector3.Lerp(point01, point02, t), Vector3.Lerp(point02, point03, t), t);
     }
