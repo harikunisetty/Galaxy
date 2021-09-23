@@ -18,6 +18,11 @@ public class AiAmmo : MonoBehaviour
         Vector3 velocity = new Vector3(0, Speed, 0);
         pos += transform.rotation * velocity;
         transform.position = pos;
+
+        if (transform.position.y < -6f)
+        {
+            Destroy(gameObject);
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {

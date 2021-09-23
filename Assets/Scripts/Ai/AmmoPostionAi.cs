@@ -17,7 +17,8 @@ public class AmmoPostionAi : MonoBehaviour
         {
             timer = nextAttack;
             Instantiate(Ammo, transform.position, transform.rotation);
-        }           
+        }
+ 
     }
 }
 

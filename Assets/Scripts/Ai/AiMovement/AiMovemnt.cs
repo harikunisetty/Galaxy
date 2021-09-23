@@ -50,7 +50,7 @@ public class AiMovemnt : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Death();
+            Destroy(other.gameObject);
         }    
     }
 
@@ -81,7 +81,7 @@ public class AiMovemnt : MonoBehaviour
 
         if (timer <= 0)
         {
-            moveSide = true;
+            moveSide = false;
 
             pos = transform.position;
             Vector3 position = new Vector3(0, speed, 0);
